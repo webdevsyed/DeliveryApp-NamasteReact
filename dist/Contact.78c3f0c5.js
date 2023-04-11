@@ -588,7 +588,8 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "max-w-7xl mx-auto flex-grow",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Contact us"
@@ -598,14 +599,18 @@ const Contact = ()=>{
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "come see us now!!"
+                children: "Come see us now!!"
             }, void 0, false, {
                 fileName: "src/components/Contact.js",
                 lineNumber: 5,
                 columnNumber: 9
             }, undefined)
         ]
-    }, void 0, true);
+    }, void 0, true, {
+        fileName: "src/components/Contact.js",
+        lineNumber: 3,
+        columnNumber: 9
+    }, undefined);
 };
 _c = Contact;
 exports.default = Contact;

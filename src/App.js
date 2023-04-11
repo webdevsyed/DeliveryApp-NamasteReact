@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useContext, useState } from 'react'
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
 
@@ -12,16 +12,34 @@ import Error from "./components/Error";
 import RestaurantDetails from './components/RestaurantDetails';
 import LoginPage from './components/LoginPage';
 import Profile from './components/Profile';
+import UserContext from './utils/UserContext';
+
 
 const Contact = lazy(() => import("./components/Contact"))
 
 const App = () => {
+
+    // const {name} = useContext(UserContext)
+    const [num, setNum] = useState(99)
+    const [email, setEmail] = useState("bilal@gmail.com")
+
     return (
-        <>
-            <Header />
-            <Outlet />
-            <Footer />
-        </>
+
+        <UserContext.Provider
+            value={{
+                number: num,
+                setNumber : setNum,
+                email : email,
+                setEmail : setEmail
+            }}
+        >
+            <div className='h-full min-h-screen flex flex-col justify-between'>
+                <Header />
+                <Outlet />
+                <Footer />
+            </div>
+        </UserContext.Provider>
+
     )
 }
 
@@ -74,7 +92,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <RouterProvider router={appRouter} />
-    // </React.StrictMode>
+    </React.StrictMode>
 )
 
 // export default App
